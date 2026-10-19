@@ -1,0 +1,5 @@
+﻿node_modules
+.env
+chatbox-users.db
+chatbox-users.db-wal
+chatbox-users.db-shm
