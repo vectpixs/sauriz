@@ -1,49 +1,125 @@
-# Vyom: portfolio AI chatbot (one HTML file + secure Gemini backend)
+# Sauriz AI
 
-Your API key lives only in `.env` on the server. The browser talks to `/api/chat`; the server talks to Gemini.
+**Your AI-Powered Assistant for a Smarter Digital Experience**
 
-## 1. Get a Gemini API key
-1. Open https://aistudio.google.com/apikey and sign in with Google.
-2. Click **Create API key** and copy it.
+Sauriz AI is a modern, web-based AI assistant designed to provide intelligent conversations and helpful responses through a clean, professional, and user-friendly interface. Powered by Google's Gemini API and built with JavaScript and Node.js, Sauriz aims to make AI assistance accessible to users worldwide.
 
-## 2. Install Node.js
-Download the LTS version from https://nodejs.org (version 18 or newer). Check it in a terminal: `node -v`
+## Features
 
-## 3. Set up the project
+- AI-powered conversations using Google's Gemini API
+- Clean and professional chat interface
+- User authentication and account management
+- Web-based access across supported devices
+- Node.js backend for processing requests
+- Frontend built with HTML, CSS, and JavaScript
+- Designed for future improvements and additional AI capabilities
+
+Features depend on the current implementation and configuration.
+
+## Technology Stack
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js
+- AI Integration: Google Gemini API
+- Package Management: npm
+- Authentication: Node.js authentication routes
+
+## Project Structure
+
+```text
+sauriz/
+├── public/
+│   └── index.html
+├── server.js
+├── auth-routes.js
+├── package.json
+├── package-lock.json
+├── .env.example
+├── .gitignore
+└── README.md
 ```
-cd vyom-chat
+
+The actual files may differ depending on your project configuration.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- A Google Gemini API key
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/vectpixs/sauriz.git
+cd sauriz
+```
+
+### 2. Install Dependencies
+
+```bash
 npm install
 ```
-Copy `.env.example` to `.env` (Windows: `copy .env.example .env`, Mac/Linux: `cp .env.example .env`), open `.env` and paste your key after `GEMINI_API_KEY=`.
 
-## 4. Make it yours
-- `server.js`: edit the `PERSONA` text (your name, skills, projects, contact). This is what the bot knows about you.
-- `public/index.html`: edit the `EDIT ME` block at the top of the script (name, owner, FAQ cards, typed lines). Colours are the `--a1`, `--a2`, `--a3` variables in the CSS.
+### 3. Configure Environment Variables
 
-## 5. Run it
+Create a `.env` file in the project root using `.env.example` as a reference.
+
+Add your Gemini API key using the variable name expected by your backend.
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
 ```
+
+Replace the placeholder with your actual API key.
+
+Never upload your real `.env` file or expose your API key in frontend JavaScript.
+
+### 4. Run the Application
+
+```bash
 npm start
 ```
-Open **http://localhost:3000** (do not double-click index.html; the backend must serve it).
 
-## Test checklist
-1. Sidebar footer shows **Backend online**. If it says offline, the server is not running.
-2. Click an FAQ card: the reply streams in word by word and the chat appears in the sidebar.
-3. Ask for a Markdown table and a code block; use the **Copy** button on the code.
-4. Press the stop button mid-reply, then use **Regenerate** on a finished reply.
-5. Attach a photo (paperclip, drag and drop, or paste) and ask "What is in this image?"
-6. Rename a chat (pencil), search for a word from it, delete it (trash, click twice).
-7. Refresh the page: your chats are still there.
-8. Shrink the window below 800 px: the sidebar becomes a drawer.
-9. Security check: open DevTools, Network tab, send a message. The request goes to `/api/chat` and your key appears nowhere. Searching the page source for your key finds nothing.
-10. Break it on purpose: put a wrong key in `.env`, restart, send a message. You should see a friendly error, not a crash.
+If your `package.json` contains the correct start script, the server should start. Open the local address shown in your terminal to access the application.
 
-## Troubleshooting
-- **Gemini rejected the request**: check the key and `GEMINI_MODEL` in `.env` (model names change; pick a current one in AI Studio).
-- **Quota or busy message**: free keys have per-minute limits. Wait and retry.
-- **Port in use**: change `PORT` in `.env`.
+## Deployment
 
-## Putting it on your portfolio
-1. Deploy this folder to a Node host (Render, Railway, Fly.io). Set `GEMINI_API_KEY` in the host's environment settings, not in a file you upload.
-2. Easiest: link to the deployed URL from your portfolio, or embed it with `<iframe src="https://your-app.example.com" style="width:100%;height:80vh;border:0"></iframe>`.
-3. To host the HTML elsewhere instead, set `const API='https://your-app.example.com'` in `index.html` and `ALLOWED_ORIGIN=https://your-portfolio.com` in the server's environment.
+Sauriz AI can be deployed on a hosting platform that supports Node.js applications.
+
+1. Connect your GitHub repository to your hosting provider.
+2. Configure the required environment variables.
+3. Install dependencies.
+4. Set the appropriate start command.
+5. Deploy and test the application.
+
+Hosting limits and AI API costs depend on the providers and plans you choose.
+
+## Security
+
+- Keep API keys and credentials private.
+- Store sensitive information in environment variables.
+- Never expose backend credentials in frontend files.
+- Validate requests and protect authentication endpoints.
+- Handle user accounts and personal data securely.
+
+## Future Development
+
+Potential improvements include support for additional AI providers, enhanced conversation management, improved response quality, productivity tools, and expanded AI capabilities.
+
+These are future possibilities and may not be implemented yet.
+
+## Contributing
+
+Suggestions, bug reports, and contributions are welcome. Contributors can fork the repository, create a branch, make changes, and submit a pull request.
+
+## License
+
+No license has been specified yet. Consider adding a suitable license if you want others to reuse or contribute to the project.
+
+## Repository
+
+GitHub: https://github.com/vectpixs/sauriz
+
+Sauriz AI aims to make AI assistance more accessible, useful, and user-friendly.
